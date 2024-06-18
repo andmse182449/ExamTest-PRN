@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentaCare", "DentaCare\DentaCare.csproj", "{3348FC83-B27F-42C5-AF6D-4813F225CB03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{FB8F03CA-24E0-4226-971E-390FA2CA706C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{FDF80C5F-8D91-4C47-A713-C99C79EEB599}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3348FC83-B27F-42C5-AF6D-4813F225CB03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3348FC83-B27F-42C5-AF6D-4813F225CB03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3348FC83-B27F-42C5-AF6D-4813F225CB03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3348FC83-B27F-42C5-AF6D-4813F225CB03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB8F03CA-24E0-4226-971E-390FA2CA706C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB8F03CA-24E0-4226-971E-390FA2CA706C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB8F03CA-24E0-4226-971E-390FA2CA706C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB8F03CA-24E0-4226-971E-390FA2CA706C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDF80C5F-8D91-4C47-A713-C99C79EEB599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDF80C5F-8D91-4C47-A713-C99C79EEB599}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDF80C5F-8D91-4C47-A713-C99C79EEB599}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDF80C5F-8D91-4C47-A713-C99C79EEB599}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F38F71F5-1C42-4082-93FF-94E5FBFA4A00}
+	EndGlobalSection
+EndGlobal
