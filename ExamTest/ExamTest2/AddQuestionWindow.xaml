@@ -1,0 +1,51 @@
+﻿<Window x:Class="ExamTest.AddQuestionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExamTest"
+        mc:Ignorable="d"
+        Title="AddQuestionWindow" Height="450" Width="800">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Question Text:" Grid.Row="0" Grid.Column="0" Margin="0,0,10,10"/>
+        <TextBox x:Name="QuestionTextBox" Grid.Row="0" Grid.Column="1" Margin="0,0,0,10" TextWrapping="Wrap" AcceptsReturn="True" Height="60"/>
+
+        <TextBlock Text="Option A:" Grid.Row="1" Grid.Column="0" Margin="0,0,10,10"/>
+        <TextBox x:Name="OptionATextBox" Grid.Row="1" Grid.Column="1" Margin="0,0,0,10"/>
+
+        <TextBlock Text="Option B:" Grid.Row="2" Grid.Column="0" Margin="0,0,10,10"/>
+        <TextBox x:Name="OptionBTextBox" Grid.Row="2" Grid.Column="1" Margin="0,0,0,10"/>
+
+        <TextBlock Text="Option C:" Grid.Row="3" Grid.Column="0" Margin="0,0,10,10"/>
+        <TextBox x:Name="OptionCTextBox" Grid.Row="3" Grid.Column="1" Margin="0,0,0,10"/>
+
+        <TextBlock Text="Option D:" Grid.Row="4" Grid.Column="0" Margin="0,0,10,10"/>
+        <TextBox x:Name="OptionDTextBox" Grid.Row="4" Grid.Column="1" Margin="0,0,0,10"/>
+
+        <TextBlock Text="Correct Answer:" Grid.Row="5" Grid.Column="0" Margin="0,0,10,10"/>
+        <ComboBox x:Name="CorrectAnswerComboBox" Grid.Row="5" Grid.Column="1" Margin="0,0,0,10">
+            <ComboBoxItem Content="A"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="C"/>
+            <ComboBoxItem Content="D"/>
+        </ComboBox>
+
+        <Button Content="Add Question" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right" Width="100" Height="30" Click="AddQuestionButton_Click" Margin="0,20,0,0" Grid.RowSpan="3" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

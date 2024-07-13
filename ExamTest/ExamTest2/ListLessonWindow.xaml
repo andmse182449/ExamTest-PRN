@@ -1,0 +1,33 @@
+﻿<Window x:Class="ExamTest.ListLessonWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExamTest"
+        mc:Ignorable="d"
+        Title="ListLessonWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="10">
+            <TextBlock Text="Quiz Exercises" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+            <DataGrid x:Name="ExercisesDataGrid" AutoGenerateColumns="False" Margin="10" SelectionMode="Single" IsReadOnly="True" SelectionChanged="ExercisesDataGrid_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Exercise Name" Binding="{Binding LessonName}" Width="*"/>
+                    <DataGridTextColumn Header="Date Created" Binding="{Binding DateCreate}" Width="*"/>
+                    <DataGridTemplateColumn Width="Auto">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="View Details" Width="100" Height="30" Click="ViewDetailsButton_Click"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="AddExerciseButton" Content="Add New Exercise" Width="150" Height="30" Margin="10" HorizontalAlignment="Right" Click="AddExerciseButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

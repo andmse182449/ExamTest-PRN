@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AccountDetailForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AccountManagementForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AccountDetailForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AccountManagementForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AddQuestionWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CreateLessonWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ListLessonWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="LoginStaffWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ViewDetalWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ViewScoreWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
