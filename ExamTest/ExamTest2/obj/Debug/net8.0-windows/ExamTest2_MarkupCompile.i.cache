@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\ROG STRIX\Documents\PRN211\ExamTest2\ExamTest2\obj\Debug\net8.0-windows\
+D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\ExamTest2\obj\Debug\net8.0-windows\
 ExamTest2
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\ROG STRIX\Documents\PRN211\ExamTest2\ExamTest2\App.xaml
+D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\ExamTest2\App.xaml
 11566845951
 
 16645169964
-247-1719461785
+247420012333
 AccountDetailForm.xaml;AccountManagementForm.xaml;AddQuestionWindow.xaml;CreateLessonWindow.xaml;ListLessonWindow.xaml;LoginStaffWindow.xaml;LoginWindow.xaml;StudentQuestions.xaml;StudentResult.xaml;ViewDetalWindow.xaml;ViewScoreWindow.xaml;
 
 True

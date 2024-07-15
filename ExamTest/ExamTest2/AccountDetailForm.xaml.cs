@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Repository.Models;
 using Services;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace ExamTest2
 {
@@ -23,7 +24,7 @@ namespace ExamTest2
     /// </summary>
     public partial class AccountDetailForm : Window
     {
-        public string? username {  get; set; }
+        public string? username { get; set; }
         private AccountService _accService = new();
         public bool IsReadOnlyUsername => username != null; // Determines if username should be read-only
 
@@ -42,7 +43,7 @@ namespace ExamTest2
             {
                 var account = _accService.GetAccount(username);
 
-                
+
 
                 user.Text = account.Username;
                 name.Text = account.FullName;
@@ -78,7 +79,7 @@ namespace ExamTest2
             int selectedRole = (int)(role.SelectedItem as ComboBoxItem).Tag;
             Account account = new()
             {
-                Username = user.Text.Trim(),
+
                 Password = pass.Text.Trim(),
                 FullName = name.Text.Trim(),
                 Role = selectedRole,
@@ -97,6 +98,10 @@ namespace ExamTest2
                 _accService.UpdateAccount(account);
 
             Close();
+        }
+        private void role_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            user.Text = "abc";
         }
     }
 }

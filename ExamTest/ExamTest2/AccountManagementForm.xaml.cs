@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,9 +31,44 @@ namespace ExamTest2
         }
         private void DgAccountList_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
-            if (e.PropertyName == "Scores" || e.PropertyName == "Role")
+            if (e.PropertyName == "Scores")
             {
                 e.Cancel = true; // This prevents the column from being generated
+            }
+
+            if (e.PropertyName == "Role")
+            {
+                e.Column = new DataGridTextColumn
+                {
+                    Header = "Role",
+                    Binding = new Binding("Role")
+                    {
+                        Converter = new RoleToDescriptionConverter()
+                    }
+                };
+            }
+
+
+        }
+
+        public class RoleToDescriptionConverter : IValueConverter
+        {
+            public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+            {
+                switch (value)
+                {
+                    case 0:
+                        return "Student";
+                    case 1:
+                        return "Teacher";
+                    default:
+                        return "Unknown";
+                }
+            }
+
+            public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+            {
+                throw new NotImplementedException();
             }
         }
 
@@ -72,6 +108,7 @@ namespace ExamTest2
                 user.Text = selectedAccount.Username;
                 fulllname.Text = selectedAccount.FullName;
                 password.Text = selectedAccount.Password;
+
 
                 // Select the correct role in ComboBox based on selectedAccount.Role
                 foreach (ComboBoxItem item in role.Items)
