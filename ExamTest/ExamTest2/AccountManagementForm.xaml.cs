@@ -142,10 +142,17 @@ namespace ExamTest2
                 fulllname.Text = selectedAccount.FullName;
                 password.Text = selectedAccount.Password;
 
-                btnDisable.IsEnabled = true;
-                btnEnable.IsEnabled = true;
-                btnUpdate.IsEnabled = true;
-
+                if (selectedAccount.Status == 0)
+                {
+                    btnDisable.IsEnabled = true;
+                    btnUpdate.IsEnabled = true;
+                    btnEnable.IsEnabled = false;
+                }
+                else {
+                    btnEnable.IsEnabled = true;
+                    btnDisable.IsEnabled = false;
+                    btnUpdate.IsEnabled = true;
+                }
                 // Select the correct role in ComboBox based on selectedAccount.Role
                 foreach (ComboBoxItem item in role.Items)
                 {
@@ -179,7 +186,10 @@ namespace ExamTest2
                 MessageBox.Show("The user name is required !", "User Name required!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return;
             }
-            _service.Delete(user.Text);
+            _service.EnableAccount(user.Text);
+            btnDisable.IsEnabled = true;
+            btnUpdate.IsEnabled = true;
+            btnEnable.IsEnabled = false;
 
             var result = _service.GetAllAccounts();
             dgAccountList.ItemsSource = null;
@@ -216,6 +226,25 @@ namespace ExamTest2
             var result = _service.Search(txtkeyword.Text.Trim());
             dgAccountList.ItemsSource = null;
             dgAccountList.ItemsSource = result;
+        }
+
+        private void btnDisable_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(user.Text))
+            {
+                MessageBox.Show("The user name is required !", "User Name required!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                return;
+            }
+            _service.DisbaleAccount(user.Text);
+            btnDisable.IsEnabled = false;
+            btnUpdate.IsEnabled = true;
+            btnEnable.IsEnabled = true;
+
+            var result = _service.GetAllAccounts();
+            dgAccountList.ItemsSource = null;
+            dgAccountList.ItemsSource = result;
+
         }
     }
 }

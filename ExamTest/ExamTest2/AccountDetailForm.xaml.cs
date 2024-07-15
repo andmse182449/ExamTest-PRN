@@ -65,7 +65,7 @@ namespace ExamTest2
             {
                 // Set UI elements for add new account scenario
                 lblTitle.Content = "Add Account";
-                user.IsReadOnly = false; // Ensure username TextBox is editable for new accounts
+                user.IsReadOnly = true;
             }
         }
 
@@ -101,16 +101,19 @@ namespace ExamTest2
         }
         private void role_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (role.SelectedItem is ComboBoxItem selectedItem)
+            if (lblTitle.Content.Equals("Add Account"))
             {
-                string roleName = selectedItem.Content.ToString();
-                if (roleName == "Student")
+                if (role.SelectedItem is ComboBoxItem selectedItem)
                 {
-                    user.Text = "ST" + Convert.ToString(_accService.CountStudent() + 1);
-                }
-                else if (roleName == "Teacher")
-                {
-                    user.Text = "TE" + Convert.ToString(_accService.CountTeacher() + 1);
+                    string roleName = selectedItem.Content.ToString();
+                    if (roleName == "Student")
+                    {
+                        user.Text = "ST" + Convert.ToString(_accService.CountStudent() + 1);
+                    }
+                    else if (roleName == "Teacher")
+                    {
+                        user.Text = "TE" + Convert.ToString(_accService.CountTeacher() + 1);
+                    }
                 }
             }
         }

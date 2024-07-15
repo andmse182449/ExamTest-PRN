@@ -19,7 +19,7 @@
 
         <Label Content="Role" HorizontalAlignment="Left" Margin="75,237,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.423,0.541" Height="36" Width="37" FontSize="14" IsEnabled="True"/>
         <ComboBox x:Name="role" HorizontalAlignment="Left" Margin="134,240,0,0" VerticalAlignment="Top" Width="118"
-                  SelectedValuePath="Tag" SelectedValue="{Binding Role}" Height="31" FontSize="14">
+                  SelectedValuePath="Tag" SelectedValue="{Binding Role}" Height="31" FontSize="14" IsEnabled="False">
             <ComboBoxItem Content="Student" Tag="0" />
             <ComboBoxItem Content="Teacher" Tag="1" />
         </ComboBox>
@@ -29,7 +29,7 @@
         <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="72,316,0,0" VerticalAlignment="Top" Width="52"  Click="btnAdd_Click" RenderTransformOrigin="0.917,0.653" Height="40" FontSize="15"/>
         <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="151,316,0,0" VerticalAlignment="Top"  Click="btnUpdate_Click" Height="40" Width="62" FontSize="15" IsEnabled="False"/>
         <Button x:Name="btnEnable" Content="Enable" HorizontalAlignment="Left" Margin="241,316,0,0" VerticalAlignment="Top" Click="btnDelete_Click" Height="40" Width="56" FontSize="15" IsEnabled="False"/>
-        <Button x:Name="btnDisable" Content="Disable" HorizontalAlignment="Left" Margin="325,316,0,0" VerticalAlignment="Top" Height="40" Width="56" FontSize="15" IsEnabled="False"/>
+        <Button x:Name="btnDisable" Content="Disable" HorizontalAlignment="Left" Margin="325,316,0,0" VerticalAlignment="Top" Height="40" Width="56" FontSize="15" IsEnabled="False" Click="btnDisable_Click"/>
         <Button x:Name="btnQuit" Content="Quit" HorizontalAlignment="Left" Margin="895,434,0,0" VerticalAlignment="Top" Click="btnQuit_Click" Width="78" Height="20" FontSize="13" Background="red" Foreground="White"/>
         <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="632,56,0,0" VerticalAlignment="Top" Click="btnSearch_Click" FontSize="14" Height="28" Width="63"/>
         <TextBox  x:Name="txtkeyword" HorizontalAlignment="Left" Margin="423,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="195" FontSize="14" Height="29"/>
