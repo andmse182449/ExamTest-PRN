@@ -77,7 +77,7 @@ namespace ExamTest {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ExamTest2;V1.0.0.0;component/createlessonwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ExamTest2;component/createlessonwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\CreateLessonWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

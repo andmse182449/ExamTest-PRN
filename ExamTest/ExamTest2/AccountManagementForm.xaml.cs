@@ -48,6 +48,18 @@ namespace ExamTest2
                 };
             }
 
+            if (e.PropertyName == "Status")
+            {
+                e.Column = new DataGridTextColumn
+                {
+                    Header = "Status",
+                    Binding = new Binding("Status")
+                    {
+                        Converter = new StatusToDescriptionConverter()
+                    }
+                };
+            }
+
 
         }
 
@@ -61,6 +73,27 @@ namespace ExamTest2
                         return "Student";
                     case 1:
                         return "Teacher";
+                    default:
+                        return "Unknown";
+                }
+            }
+
+            public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public class StatusToDescriptionConverter : IValueConverter
+        {
+            public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+            {
+                switch (value)
+                {
+                    case 0:
+                        return "Enabled";
+                    case 1:
+                        return "Disabled";
                     default:
                         return "Unknown";
                 }
@@ -109,6 +142,9 @@ namespace ExamTest2
                 fulllname.Text = selectedAccount.FullName;
                 password.Text = selectedAccount.Password;
 
+                btnDisable.IsEnabled = true;
+                btnEnable.IsEnabled = true;
+                btnUpdate.IsEnabled = true;
 
                 // Select the correct role in ComboBox based on selectedAccount.Role
                 foreach (ComboBoxItem item in role.Items)

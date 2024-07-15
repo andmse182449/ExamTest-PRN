@@ -13,5 +13,7 @@ public partial class Account
 
     public int Role { get; set; }
 
+    public int Status { get; set; }
+
     public virtual ICollection<Score> Scores { get; set; } = new List<Score>();
 }

@@ -101,7 +101,18 @@ namespace ExamTest2
         }
         private void role_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            user.Text = "abc";
+            if (role.SelectedItem is ComboBoxItem selectedItem)
+            {
+                string roleName = selectedItem.Content.ToString();
+                if (roleName == "Student")
+                {
+                    user.Text = "ST" + Convert.ToString(_accService.CountStudent() + 1);
+                }
+                else if (roleName == "Teacher")
+                {
+                    user.Text = "TE" + Convert.ToString(_accService.CountTeacher() + 1);
+                }
+            }
         }
     }
 }

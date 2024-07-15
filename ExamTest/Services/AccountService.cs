@@ -10,7 +10,7 @@ namespace Services
         public Account? CheckLogin(String user, String password)
         {
             Account? account = _repository.Get(user);
-            return account != null && account.Password == password ? account : null;
+            return account.Status == 0 && account != null && account.Password == password ? account : null;
         }
         public List<Account> GetAllAccounts()
         {
@@ -21,6 +21,15 @@ namespace Services
             return _repository.GetAll().Where(b => b.FullName.ToLower().Contains(keyword.ToLower()) ||
                                               b.Username.ToLower().Contains(keyword.ToLower())).ToList();
 
+        }
+
+        public int CountStudent()
+        {
+            return _repository.GetAll().Where(b => b.Role == 0).ToList().Count();
+        }
+        public int CountTeacher()
+        {
+            return _repository.GetAll().Where(b => b.Role == 1).ToList().Count();
         }
 
         public void Delete(String username)
@@ -43,5 +52,18 @@ namespace Services
             _repository.Update(account);
 
         }
+        public void DisbaleAccount(String username)
+        {
+            var account = GetAccount(username);
+            account.Status = 1;
+            _repository.Update(account);
+        }
+        public void EnableAccount(String username)
+        {
+            var account = GetAccount(username);
+            account.Status = 0;
+            _repository.Update(account);
+        }
+
     }
 }

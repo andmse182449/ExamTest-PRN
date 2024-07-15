@@ -13,3 +13,18 @@ C:\Users\ROG STRIX\Documents\PRN211\ExamTest2\Repository\obj\Debug\net8.0\refint
 C:\Users\ROG STRIX\Documents\PRN211\ExamTest2\Repository\obj\Debug\net8.0\Repositories.pdb
 C:\Users\ROG STRIX\Documents\PRN211\ExamTest2\Repository\obj\Debug\net8.0\Repositories.genruntimeconfig.cache
 C:\Users\ROG STRIX\Documents\PRN211\ExamTest2\Repository\obj\Debug\net8.0\ref\Repositories.dll
+D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\Repository\bin\Debug\net8.0\Repositories.deps.json
+D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\Repository\bin\Debug\net8.0\Repositories.runtimeconfig.json
+D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\Repository\bin\Debug\net8.0\Repositories.dll
+D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\Repository\bin\Debug\net8.0\Repositories.pdb
+D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\Repository\obj\Debug\net8.0\Repositories.csproj.AssemblyReference.cache
+D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\Repository\obj\Debug\net8.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\Repository\obj\Debug\net8.0\Repositories.AssemblyInfoInputs.cache
+D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\Repository\obj\Debug\net8.0\Repositories.AssemblyInfo.cs
+D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\Repository\obj\Debug\net8.0\Repositories.csproj.CoreCompileInputs.cache
+D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\Repository\obj\Debug\net8.0\Repositories.sourcelink.json
+D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\Repository\obj\Debug\net8.0\Repositories.dll
+D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\Repository\obj\Debug\net8.0\refint\Repositories.dll
+D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\Repository\obj\Debug\net8.0\Repositories.pdb
+D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\Repository\obj\Debug\net8.0\Repositories.genruntimeconfig.cache
+D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\Repository\obj\Debug\net8.0\ref\Repositories.dll

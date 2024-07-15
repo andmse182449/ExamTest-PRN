@@ -109,7 +109,7 @@ namespace ExamTest_PRN212 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ExamTest2;V1.0.0.0;component/studentquestions.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ExamTest2;component/studentquestions.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\StudentQuestions.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
