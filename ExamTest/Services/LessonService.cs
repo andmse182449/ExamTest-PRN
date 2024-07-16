@@ -9,7 +9,7 @@ using Repository.Models;
 
 namespace Services
 {
-   
+
     public class LessonService
     {
         private LessonRepository _repository = new LessonRepository();
@@ -23,6 +23,11 @@ namespace Services
         {
             LessonRepository repository = new LessonRepository();
             return repository.GetAll();
+        }
+        public List<Lesson> search(String keyword)
+        {
+            LessonRepository repository = new LessonRepository();
+            return repository.GetAll().Where(ex => ex.LessonName.ToLower().Contains(keyword) || ex.LessonId.ToLower().Contains(keyword)).ToList(); ;
         }
 
         public void CreateNewLesson(Lesson lesson)

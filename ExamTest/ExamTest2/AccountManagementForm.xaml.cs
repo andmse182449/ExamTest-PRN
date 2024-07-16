@@ -121,14 +121,10 @@ namespace ExamTest2
 
         private void btnQuit_Click(object sender, RoutedEventArgs e)
         {
-            // Show a confirmation message box
             MessageBoxResult result = MessageBox.Show("Are you sure you want to exit the application?", "Confirm Exit", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
             if (result == MessageBoxResult.Yes)
             {
-                // Perform any necessary cleanup operations here
-
-                // Close the main window
                 System.Windows.Application.Current.Shutdown();
             }
         }

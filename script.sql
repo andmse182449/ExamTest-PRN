@@ -1,4 +1,5 @@
-﻿USE [ExamTest]
+﻿
+USE [ExamTest]
 GO
 /****** Object:  Table [dbo].[account]    Script Date: 7/13/2024 3:00:37 AM ******/
 SET ANSI_NULLS ON
@@ -70,7 +71,10 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-INSERT [dbo].[account] ([username], [password], [fullName], [role]) VALUES (N'ad', N'1', N'Nguyễn Quốc Bảo', 2, 0)
+INSERT [dbo].[account] ([username], [password], [fullName], [role], [status]) VALUES (N'ad', N'1', N'Nguyễn Quốc Bảo', 2, 0)
+INSERT [dbo].[account] ([username], [password], [fullName], [role], [status]) VALUES (N's1', N'1', N'Nguyễn Quốc An', 1, 0)
+INSERT [dbo].[account] ([username], [password], [fullName], [role], [status]) VALUES (N's2', N'1', N'Nguyễn Quốc Phúc', 0, 0)
+
 
 GO
 INSERT [dbo].[lessons] ([lessonID], [lessonName], [LessonStatus], [DateCreate]) VALUES (N'swp391', N'swp', 1, CAST(N'2024-06-28' AS Date))
@@ -93,3 +97,10 @@ REFERENCES [dbo].[account] ([username])
 GO
 ALTER TABLE [dbo].[questions]  WITH CHECK ADD CHECK  (([correctAnswer]='D' OR [correctAnswer]='C' OR [correctAnswer]='B' OR [correctAnswer]='A'))
 GO
+select * from account
+select * from lessons
+select * from questions
+select * from score
+
+        <Label Content="User Name" HorizontalAlignment="Left" Margin="51,61,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.271,1.619"/>
+        <TextBox x:Name="user" HorizontalAlignment="Left" Margin="126,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" Height="22" />

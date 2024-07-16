@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Uni_Study\\Sem5\\PRN212\\DentaCare-PRN\\ExamTest\\Services\\Services.csproj": {}
+    "C:\\Users\\ROG STRIX\\Documents\\GitHub\\ExamTest-PRN\\ExamTest\\Services\\Services.csproj": {}
   },
   "projects": {
-    "D:\\Uni_Study\\Sem5\\PRN212\\DentaCare-PRN\\ExamTest\\Repository\\Repositories.csproj": {
+    "C:\\Users\\ROG STRIX\\Documents\\GitHub\\ExamTest-PRN\\ExamTest\\Repository\\Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Uni_Study\\Sem5\\PRN212\\DentaCare-PRN\\ExamTest\\Repository\\Repositories.csproj",
+        "projectUniqueName": "C:\\Users\\ROG STRIX\\Documents\\GitHub\\ExamTest-PRN\\ExamTest\\Repository\\Repositories.csproj",
         "projectName": "Repositories",
-        "projectPath": "D:\\Uni_Study\\Sem5\\PRN212\\DentaCare-PRN\\ExamTest\\Repository\\Repositories.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Uni_Study\\Sem5\\PRN212\\DentaCare-PRN\\ExamTest\\Repository\\obj\\",
+        "projectPath": "C:\\Users\\ROG STRIX\\Documents\\GitHub\\ExamTest-PRN\\ExamTest\\Repository\\Repositories.csproj",
+        "packagesPath": "C:\\Users\\ROG STRIX\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ROG STRIX\\Documents\\GitHub\\ExamTest-PRN\\ExamTest\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ROG STRIX\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -39,6 +39,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -90,24 +95,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Uni_Study\\Sem5\\PRN212\\DentaCare-PRN\\ExamTest\\Services\\Services.csproj": {
+    "C:\\Users\\ROG STRIX\\Documents\\GitHub\\ExamTest-PRN\\ExamTest\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Uni_Study\\Sem5\\PRN212\\DentaCare-PRN\\ExamTest\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Users\\ROG STRIX\\Documents\\GitHub\\ExamTest-PRN\\ExamTest\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "D:\\Uni_Study\\Sem5\\PRN212\\DentaCare-PRN\\ExamTest\\Services\\Services.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Uni_Study\\Sem5\\PRN212\\DentaCare-PRN\\ExamTest\\Services\\obj\\",
+        "projectPath": "C:\\Users\\ROG STRIX\\Documents\\GitHub\\ExamTest-PRN\\ExamTest\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\ROG STRIX\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ROG STRIX\\Documents\\GitHub\\ExamTest-PRN\\ExamTest\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ROG STRIX\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -123,8 +128,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Uni_Study\\Sem5\\PRN212\\DentaCare-PRN\\ExamTest\\Repository\\Repositories.csproj": {
-                "projectPath": "D:\\Uni_Study\\Sem5\\PRN212\\DentaCare-PRN\\ExamTest\\Repository\\Repositories.csproj"
+              "C:\\Users\\ROG STRIX\\Documents\\GitHub\\ExamTest-PRN\\ExamTest\\Repository\\Repositories.csproj": {
+                "projectPath": "C:\\Users\\ROG STRIX\\Documents\\GitHub\\ExamTest-PRN\\ExamTest\\Repository\\Repositories.csproj"
               }
             }
           }
@@ -133,6 +138,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -154,7 +164,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -21,6 +21,7 @@ namespace ExamTest_PRN212
     {
         private LessonService lessonService = new();
         private ScoreService scoreService = new();
+        private QuestionService _quesService = new();
         public LoginWindow()
         {
             InitializeComponent();
@@ -54,7 +55,7 @@ namespace ExamTest_PRN212
                 MessageBox.Show("Login Fail!", "error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            if (account.Role == 0)
+            if (account.Role == 0 && account.Status == 0)
             {
                 string lessonId = lessonIdTextBox.Text;
                 string accountId = emailBx.Text;
@@ -73,14 +74,18 @@ namespace ExamTest_PRN212
                         MessageBox.Show("Wrong Exam Code !", "No Exam Founded!", MessageBoxButton.OK, MessageBoxImage.Error);
                         return;
                     }
-                    else if (lessonService.GetALesson(lessonId) != null && lessonService.GetALesson(lessonId).LessonStatus == true)
+                    else if (lessonService.GetALesson(lessonId) != null && lessonService.GetALesson(lessonId).LessonStatus == true && _quesService.GetAllQuestions(lessonId).Capacity != 0)
                     {
-                        // Open the quiz window with sample data
                         StudentQuestions quizScreen = new StudentQuestions(lessonId);
                         quizScreen.userName = account.Username;
                         quizScreen.lessionID = lessonId;
                         quizScreen.Show();
                         this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Access Denied!", "Out of permission", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
                     }
                 }
                 else
@@ -92,6 +97,12 @@ namespace ExamTest_PRN212
 
 
 
+        }
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            LoginStaffWindow staffWindow = new LoginStaffWindow();
+            staffWindow.Show();
+            this.Close();
         }
 
         private void ExitBtn_Click(object sender, RoutedEventArgs e)

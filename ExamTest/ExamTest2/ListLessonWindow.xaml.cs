@@ -13,6 +13,7 @@ namespace ExamTest
     public partial class ListLessonWindow : Window
     {
         public ObservableCollection<Lesson> Lessons { get; set; }
+        private LessonService _lesSer = new(); 
 
         public ListLessonWindow()
         {
@@ -94,8 +95,30 @@ namespace ExamTest
             btnEnable.IsEnabled = false;
 
         }
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            string keyword = txtkeyword.Text.ToLower();
+            if (string.IsNullOrWhiteSpace(keyword))
+            {
+                // Reset to show all exercises if keyword is empty
+                LoadData();
+            }
+            else
+            {
+                // Filter exercises based on keyword
+                var filteredExercises = _lesSer.search(keyword);
+                ExercisesDataGrid.ItemsSource = filteredExercises;
+            }
+        }
+        private void btnQuit_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to exit the application?", "Confirm Exit", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
-        
+            if (result == MessageBoxResult.Yes)
+            {
+                System.Windows.Application.Current.Shutdown();
+            }
+        }
     }
     public class BooleanToStatusConverter : IValueConverter
     {

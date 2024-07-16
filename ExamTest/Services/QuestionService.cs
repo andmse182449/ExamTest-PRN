@@ -17,6 +17,10 @@ namespace Services
             return questionRepository.Get(id);
 
         }
+        public List<Question> search(String keyword, String lesID)
+        {
+            return questionRepository.GetAll(lesID).Where(ex => ex.QuestionText.ToLower().Contains(keyword)).ToList(); ;
+        }
         public List<Question> GetAllQuestions(string lesID)
         {
             return questionRepository.GetAll(lesID);

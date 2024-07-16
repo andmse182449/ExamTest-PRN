@@ -19,9 +19,14 @@
         <Button x:Name="LoginBtn" IsDefault="True" Content="Login" HorizontalAlignment="Left" Margin="140,249,0,0" VerticalAlignment="Top" Click="LoginBtn_Click" Width="46" Height="27"/>
         <Button x:Name="ExitBtn" IsDefault="True" Content="Exit" HorizontalAlignment="Left" Margin="206,249,0,0" VerticalAlignment="Top" Click="ExitBtn_Click" Width="46" Height="27"/>
 
-        <Label Content="Sign in" HorizontalAlignment="Left" Margin="183,30,0,0" VerticalAlignment="Top"/>
+        <Label Content="Sign in" HorizontalAlignment="Left" Margin="183,30,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label Content="User Name" HorizontalAlignment="Left" Margin="65,140,0,0" VerticalAlignment="Top"/>
         <Label Content="Pasword" HorizontalAlignment="Left" Margin="70,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.435,0.541"/>
+        <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,10,0,10">
+           <Hyperlink Click="Hyperlink_Click">
+                Sign in with more authority
+            </Hyperlink>
+        </TextBlock>
 
     </Grid>
 </Window>

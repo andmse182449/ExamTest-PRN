@@ -21,6 +21,7 @@ namespace ExamTest_PRN212
     /// </summary>
     public partial class LoginStaffWindow : Window
     {
+        
         public LoginStaffWindow()
         {
             InitializeComponent();
@@ -39,14 +40,14 @@ namespace ExamTest_PRN212
                 MessageBox.Show("Login Fail!", "error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            else if (account.Role == 1)
+            else if (account.Role == 1 && account.Status == 0)
             {
 
                 ListLessonWindow listLessonWindow = new ListLessonWindow();
                 listLessonWindow.Show();
                 this.Close();
             }
-            else if (account.Role == 2)
+            else if (account.Role == 2 && account.Status == 0)
             {
 
                 AccountManagementForm accountManagement = new AccountManagementForm();
@@ -73,5 +74,15 @@ namespace ExamTest_PRN212
                 System.Windows.Application.Current.Shutdown();
             }
         }
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow staffWindow = new LoginWindow();
+            staffWindow.Show();
+            this.Close();
+        }
+
+
+
+
     }
 }

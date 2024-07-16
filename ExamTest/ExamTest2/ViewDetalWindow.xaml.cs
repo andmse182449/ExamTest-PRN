@@ -25,6 +25,7 @@ namespace ExamTest
     public partial class ViewDetalWindow : Window
     {
         private string lessonID;
+        private QuestionService _quesSer = new();
         public ObservableCollection<Question> Questions { get; set; }
         public ViewDetalWindow(string lessonID)
         {
@@ -44,6 +45,20 @@ namespace ExamTest
 
         }
 
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            string keyword = txtkeyword.Text.ToLower();
+            if (string.IsNullOrWhiteSpace(keyword))
+            {
+                var filteredExercises = _quesSer.GetQuestionByLessonID( this.lessonID);
+                QuestionsDataGrid.ItemsSource = filteredExercises;
+            }
+            else
+            {
+                var filteredExercises = _quesSer.search(keyword, this.lessonID);
+                QuestionsDataGrid.ItemsSource = filteredExercises;
+            }
+        }
 
 
         private void ListStudentMarksButton_Click(object sender, RoutedEventArgs e)

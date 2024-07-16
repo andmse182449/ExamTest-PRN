@@ -13,7 +13,7 @@ namespace ExamTest_PRN212
     public partial class StudentQuestions : Window
     {
         private List<Question> questions;
-        public string? userName {  get; set; }
+        public string userName {get; set; }
         public string? lessionID { get; set; }
         private QuestionService _quesService = new();
         private ScoreService _scoreService = new(); 
@@ -27,23 +27,19 @@ namespace ExamTest_PRN212
             InitializeComponent();
             LoadQuestions(lessonId);
             DisplayQuestion();
+            SetStudentInfo();
         }
 
         private void LoadQuestions(string lessonId)
         {
-            // Load questions for the given lesson
-            questions = _quesService.GetAllQuestions(lessonId);
-
-            if (questions == null || questions.Count == 0)
-            {
-                MessageBox.Show("No questions found for this lesson.");
-                this.Close();
-            }
-
             // Initialize progress bar maximum value
             QuestionProgressBar.Maximum = questions.Count;
         }
-
+        private void SetStudentInfo()
+        {
+            string todayDate = DateTime.Now.ToString("MMMM dd, yyyy");
+            StudentInfoTextBlock.Text = $"Date: {todayDate}";
+        }
         private void DisplayQuestion()
         {
             if (currentQuestionIndex < 0 || currentQuestionIndex >= questions.Count)
@@ -76,6 +72,7 @@ namespace ExamTest_PRN212
                 }
             }
 
+
             // Update progress bar value
             UpdateProgressBar();
         }
@@ -86,28 +83,24 @@ namespace ExamTest_PRN212
             {
                 Content = $"{optionLabel}: {optionText}",
                 GroupName = "Options",
-                Tag = optionLabel // Store the option label in the Tag property
+                Tag = optionLabel 
             };
             radioButton.Checked += Option_Checked;
             OptionsPanel.Children.Add(radioButton);
         }
         private void Option_Checked(object sender, RoutedEventArgs e)
-        {
-            // Save the current choice when an option is checked
+        {    
             SaveCurrentChoice();
-
-            // Update progress bar based on the number of questions answered
             UpdateProgressBar();
         }
         private void SaveCurrentChoice()
         {
-            // Save the currently selected option for the current question
             foreach (RadioButton rb in OptionsPanel.Children)
             {
                 if (rb.IsChecked == true)
                 {
                     var currentQuestion = questions[currentQuestionIndex];
-                    userChoices[currentQuestion.QuestionId] = (string)rb.Tag; // Save the user's choice
+                    userChoices[currentQuestion.QuestionId] = (string)rb.Tag;
                     break;
                 }
             }
@@ -115,19 +108,16 @@ namespace ExamTest_PRN212
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            // Save the choice for the current question before submitting
             SaveCurrentChoice();
 
             if (userChoices.Count == questions.Count || SubmitCheckBox.IsChecked == true)
             {
-                // Calculate the total score
-               
                 int totalScore = CalculateScore();
                 ShowResult(totalScore);
             }
             else
             {
-                MessageBox.Show("Please answer all questions before submitting.");
+                MessageBox.Show("Please answer all questions before submitting!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -147,11 +137,8 @@ namespace ExamTest_PRN212
 
         private void ShowResult(int totalScore)
         {
-            // Calculate the final score based on a maximum score of 10
-            double maxScore = 10.0; // Assuming maximum possible score is 10
+            double maxScore = 10.0; 
             double finalScore = (maxScore / questions.Count) * totalScore;
-
-            // Create and show the result window with the total score
             Score score = new()
             {
                 Username = this.userName,
@@ -168,7 +155,7 @@ namespace ExamTest_PRN212
 
         private void PreviousButton_Click(object sender, RoutedEventArgs e)
         {
-            // Save the choice for the current question before navigating
+          
             SaveCurrentChoice();
 
             if (currentQuestionIndex > 0)
@@ -180,7 +167,7 @@ namespace ExamTest_PRN212
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            // Save the choice for the current question before navigating
+          
             SaveCurrentChoice();
 
             if (currentQuestionIndex < questions.Count - 1)
@@ -192,26 +179,26 @@ namespace ExamTest_PRN212
 
         private void UpdateProgressBar()
         {
-            // Count how many questions have been answered
+           
             int answeredQuestionsCount = userChoices.Count;
             QuestionProgressBar.Value = answeredQuestionsCount;
         }
 
         private void SubmitCheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            // Enable the Submit button when the CheckBox is checked
+           
             SubmitButton.IsEnabled = true;
         }
 
         private void SubmitCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            // Disable the Submit button when the CheckBox is unchecked
+           
             SubmitButton.IsEnabled = false;
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.System && e.SystemKey == Key.F4) // Alt+F4
+            if (e.Key == Key.System && e.SystemKey == Key.F4) 
             {
                 e.Handled = true;
             }
