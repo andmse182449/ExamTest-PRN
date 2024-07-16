@@ -1,18 +1,8 @@
-﻿
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Repository.Models;
 using Services;
 
@@ -31,10 +21,18 @@ namespace ExamTest
 
         private void LoadData()
         {
-            LessonService lessonService = new LessonService();
-            var lessons = lessonService.GetList();
-            Lessons = new ObservableCollection<Lesson>(lessons);
-            ExercisesDataGrid.ItemsSource = Lessons;
+            try
+            {
+                LessonService lessonService = new LessonService();
+                var lessons = lessonService.GetList();
+                Lessons = new ObservableCollection<Lesson>(lessons);
+                ExercisesDataGrid.ItemsSource = Lessons;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error loading data: " + ex.Message);
+                MessageBox.Show("An error occurred while loading data.");
+            }
         }
 
         private void AddExerciseButton_Click(object sender, RoutedEventArgs e)
@@ -46,7 +44,20 @@ namespace ExamTest
 
         private void ExercisesDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // Implement the logic for when the selection changes in the DataGrid
+            var selectedExercise = ExercisesDataGrid.SelectedItem as Lesson;
+            if (selectedExercise != null)
+            {
+                if (selectedExercise.LessonStatus == true)
+                {
+                    btnDisable.IsEnabled = true;
+                    btnEnable.IsEnabled = false;
+                }
+                else
+                {
+                    btnEnable.IsEnabled = true;
+                    btnDisable.IsEnabled = false;
+                }
+            }
         }
 
         private void ViewDetailsButton_Click(object sender, RoutedEventArgs e)
@@ -56,8 +67,30 @@ namespace ExamTest
             {
                 ViewDetalWindow viewDetalWindow = new ViewDetalWindow(selectedLesson.LessonId);
                 viewDetalWindow.ShowDialog();
-
             }
+        }
+
+        private void BtnDisable_Click(object sender, RoutedEventArgs e)
+        {
+
+            var selectedExercise = ExercisesDataGrid.SelectedItem as Lesson;
+            LessonService lessonService = new LessonService();
+            lessonService.DisableLesson(selectedExercise);
+            LoadData(); // Reload data after disabling a lesson
+            btnDisable.IsEnabled = false;
+            btnEnable.IsEnabled = false;
+        }
+
+        private void BtnEnable_Click(object sender, RoutedEventArgs e)
+        {
+
+            var selectedExercise = ExercisesDataGrid.SelectedItem as Lesson;
+            LessonService lessonService = new LessonService();
+            lessonService.EnableLesson(selectedExercise);
+            LoadData(); // Reload data after enabling a lesson
+            btnDisable.IsEnabled = false;
+            btnEnable.IsEnabled = false;
+
         }
     }
 }

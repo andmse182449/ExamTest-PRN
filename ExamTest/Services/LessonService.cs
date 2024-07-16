@@ -40,5 +40,17 @@ namespace Services
             }
             return false;
         }
+
+        public void DisableLesson(Lesson lesson)
+        {
+            lesson.LessonStatus = false;
+            _repository.Update(lesson);
+        }
+
+        public void EnableLesson(Lesson lesson)
+        {
+            lesson.LessonStatus = true;
+            _repository.Update(lesson);
+        }
     }
 }

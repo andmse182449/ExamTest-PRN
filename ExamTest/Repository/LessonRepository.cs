@@ -35,5 +35,12 @@ namespace Repositories
             return examTestContext.Lessons.Any(x => x.LessonId.Equals(lessonID));
         }
 
+        public void Update(Lesson lesson)
+        {
+            ExamTestContext examTestContext = new ExamTestContext();
+            examTestContext.Lessons.Update(lesson);
+            examTestContext.SaveChanges();
+        }
+
     }
 }

@@ -18,6 +18,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Exercise Name" Binding="{Binding LessonName}" Width="*"/>
                     <DataGridTextColumn Header="Date Created" Binding="{Binding DateCreate}" Width="*"/>
+                    <DataGridTextColumn Header="Status" Binding="{Binding LessonStatus}" Width="*"/>
                     <DataGridTemplateColumn Width="Auto">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -27,7 +28,13 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
-            <Button x:Name="AddExerciseButton" Content="Add New Exercise" Width="150" Height="30" Margin="10" HorizontalAlignment="Right" Click="AddExerciseButton_Click"/>
+            <Button x:Name="AddExerciseButton" Content="Add New Exercise" Width="162" Height="41" Margin="10" HorizontalAlignment="Right" Click="AddExerciseButton_Click" FontSize="15"/>
+           
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Button x:Name="btnDisable" Content="Disable" Height="40" Width="68" FontSize="14" Margin="0,0,10,0" IsEnabled="False" Click="BtnDisable_Click" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                <Button x:Name="btnEnable" Content="Enable" Height="40" Width="68" FontSize="14" IsEnabled="False" Click="BtnEnable_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            </StackPanel>
         </StackPanel>
+
     </Grid>
 </Window>

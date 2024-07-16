@@ -6,28 +6,29 @@
         xmlns:local="clr-namespace:ExamTest"
         mc:Ignorable="d"
         Title="CreateLessonWindow" Height="450" Width="800">
-    <Grid Margin="20">
+    <Grid Margin="20,75,34,20">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" MinHeight="48"/>
+            <RowDefinition Height="Auto" MinHeight="45"/>
+            <RowDefinition Height="Auto" MinHeight="52.92"/>
+            <RowDefinition Height="Auto" MinHeight="30"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Text="Lesson ID:" Grid.Row="0" Grid.Column="0" Margin="0,0,10,10"/>
-        <TextBox x:Name="LessonIdTextBox" Grid.Row="0" Grid.Column="1" Margin="0,0,0,10"/>
+        <TextBlock Text="Lesson ID:" Grid.Row="0" Grid.Column="0" Margin="0,0,10,10" FontSize="15"/>
+        <TextBox x:Name="LessonIdTextBox" Grid.Row="0" Grid.Column="1" Margin="0,0,0,10" FontSize="15"/>
 
-        <TextBlock Text="Lesson Name:" Grid.Row="1" Grid.Column="0" Margin="0,0,10,10"/>
-        <TextBox x:Name="LessonNameTextBox" Grid.Row="1" Grid.Column="1" Margin="0,0,0,10"/>
+        <TextBlock Text="Lesson Name:" Grid.Row="1" Grid.Column="0" Margin="0,0,10,10" FontSize="15"/>
+        <TextBox x:Name="LessonNameTextBox" Grid.Row="1" Grid.Column="1" Margin="0,0,0,10" FontSize="15"/>
 
-        <TextBlock Text="Create Date:" Grid.Row="2" Grid.Column="0" Margin="0,0,10,10"/>
-        <DatePicker x:Name="CreateDatePicker" Grid.Row="2" Grid.Column="1" Margin="0,0,0,10"/>
+        <TextBlock Text="Create Date:" Grid.Row="2" Grid.Column="0" Margin="0,0,10,10" FontSize="15"/>
+        <DatePicker x:Name="CreateDatePicker" Grid.Row="2" Grid.Column="1" Margin="0,0,0,10" FontSize="15"/>
 
-        <Button Content="Create Lesson" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Width="100" Height="30" Click="CreateLessonButton_Click" Margin="576,0,0,0" Grid.RowSpan="2" VerticalAlignment="Top"/>
+        <Button Content="Create Lesson" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Width="123" Height="30" Click="CreateLessonButton_Click" Margin="493,10,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"/>
+        <Label Grid.Column="1" Content="ADD NEW EXERCISE" HorizontalAlignment="Left" Margin="209,-56,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
     </Grid>
 </Window>
