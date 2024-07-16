@@ -220,3 +220,6 @@ D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\ExamTest2\obj\Debug\net8.0-windo
 D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\ExamTest2\obj\Debug\net8.0-windows\ExamTest2.pdb
 D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\ExamTest2\obj\Debug\net8.0-windows\ExamTest2.genruntimeconfig.cache
 D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\ExamTest2\obj\Debug\net8.0-windows\ref\ExamTest2.dll
+D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\ExamTest2\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\ExamTest2\bin\Debug\net8.0-windows\ExcelDataReader.dll
+D:\Uni_Study\Sem5\PRN212\DentaCare-PRN\ExamTest\ExamTest2\bin\Debug\net8.0-windows\ExcelDataReader.DataSet.dll

@@ -75,15 +75,22 @@ namespace ExamTest2
         }
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
+            if (!IsFormValid())
+            {
+                MessageBox.Show("You need to select all fields!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
             int selectedRole = (int)(role.SelectedItem as ComboBoxItem).Tag;
             Account account = new()
             {
-
+                Username = user.Text.Trim(),
                 Password = pass.Text.Trim(),
                 FullName = name.Text.Trim(),
                 Role = selectedRole,
+                Status = 0
             };
+            
             if (username == null)
             {
                 var res = _accService.GetAccount(user.Text.Trim());
@@ -98,6 +105,14 @@ namespace ExamTest2
                 _accService.UpdateAccount(account);
 
             Close();
+        }
+
+        private bool IsFormValid()
+        {
+            bool flag = true;
+            if (string.IsNullOrEmpty(user.Text.Trim()) || string.IsNullOrEmpty(pass.Text.Trim()) || string.IsNullOrEmpty(name.Text.Trim()) || role.SelectedItem == null) 
+                flag = false;
+            return flag;
         }
         private void role_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

@@ -151,7 +151,7 @@ namespace ExamTest2
                 else {
                     btnEnable.IsEnabled = true;
                     btnDisable.IsEnabled = false;
-                    btnUpdate.IsEnabled = true;
+                    btnUpdate.IsEnabled = false;
                 }
                 // Select the correct role in ComboBox based on selectedAccount.Role
                 foreach (ComboBoxItem item in role.Items)
@@ -238,7 +238,7 @@ namespace ExamTest2
             }
             _service.DisbaleAccount(user.Text);
             btnDisable.IsEnabled = false;
-            btnUpdate.IsEnabled = true;
+            btnUpdate.IsEnabled = false;
             btnEnable.IsEnabled = true;
 
             var result = _service.GetAllAccounts();

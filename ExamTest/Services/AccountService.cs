@@ -10,7 +10,11 @@ namespace Services
         public Account? CheckLogin(String user, String password)
         {
             Account? account = _repository.Get(user);
-            return account.Status == 0 && account != null && account.Password == password ? account : null;
+            if (account != null && account.Status == 0 && account.Password == password)
+            {
+                return account;
+            }
+            else return null;
         }
         public List<Account> GetAllAccounts()
         {
