@@ -70,11 +70,8 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-INSERT [dbo].[account] ([username], [password], [fullName], [role]) VALUES (N'ad', N'1', N'Nguyễn Quốc Bảo', 2)
-INSERT [dbo].[account] ([username], [password], [fullName], [role]) VALUES (N's1', N'1', N'Nguyễn Quốc Bảo', 1)
-INSERT [dbo].[account] ([username], [password], [fullName], [role]) VALUES (N's2', N'123', N'hoang', 0)
-INSERT [dbo].[account] ([username], [password], [fullName], [role]) VALUES (N's3', N'123', N'phuc', 0)
-INSERT [dbo].[account] ([username], [password], [fullName], [role]) VALUES (N's4', N'123', N'an', 0)
+INSERT [dbo].[account] ([username], [password], [fullName], [role]) VALUES (N'ad', N'1', N'Nguyễn Quốc Bảo', 2, 0)
+
 GO
 INSERT [dbo].[lessons] ([lessonID], [lessonName], [LessonStatus], [DateCreate]) VALUES (N'swp391', N'swp', 1, CAST(N'2024-06-28' AS Date))
 GO
