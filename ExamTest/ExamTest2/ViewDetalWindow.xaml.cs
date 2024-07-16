@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Repositories;
 using Repository.Models;
 using Services;
 
@@ -63,6 +64,28 @@ namespace ExamTest
             AddQuestionWindow addQuestionWindow = new AddQuestionWindow(lessonID);
             addQuestionWindow.ShowDialog();
             this.Close();
+
+        }
+
+        private void QuestionsDataGrid_SelectedChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btnDelete.IsEnabled = true;
+
+        }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedItem = QuestionsDataGrid.SelectedItem as Question;
+            if (selectedItem != null)
+            {
+                QuestionRepository questionRepository = new QuestionRepository();
+                questionRepository.Delete(selectedItem);
+            }
+            QuestionService questionService = new QuestionService();
+            List<Question> listQuestion = questionService.GetQuestionByLessonID(lessonID);
+            Questions = new ObservableCollection<Question>(listQuestion);
+            QuestionsDataGrid.ItemsSource = null;
+            QuestionsDataGrid.ItemsSource = Questions;
 
         }
     }

@@ -43,5 +43,12 @@ namespace Repositories
             examTestContext.Questions.Add(question);
             examTestContext.SaveChanges();
         }
+
+        public void Delete(Question question)
+        {
+            ExamTestContext examTestContext = new ExamTestContext();
+            examTestContext.Questions.Remove(question);
+            examTestContext.SaveChanges();
+        }
     }
 }
